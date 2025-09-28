@@ -131,3 +131,40 @@ console.log("Tri décroissant =", decroissant);
 // 3. Filtrer les notes ≥ 10
 const reussites = notes.filter(n => n >= 10);
 console.log("Notes ≥ 10 =", reussites);
+
+// ------------- Partie 3 -----------------
+// ------------------------------
+// Exercice 8 – Promesse simple
+// ------------------------------
+const wait = ms => new Promise(res => setTimeout(res, ms));
+
+async function telechargement() {
+  console.log("Début");
+  await wait(2000); // pause 2 secondes
+  console.log("Fin");
+}
+
+// Lancer la simulation
+telechargement();
+
+
+// ------------------------------
+// Exercice 9 – Fetch + async/await
+// ------------------------------
+async function getPosts() {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await res.json();
+
+    console.log("Titres des 5 premiers posts :");
+    data.slice(0, 5).forEach((post, i) => {
+      console.log(`${i + 1}. ${post.title}`);
+    });
+  } catch (err) {
+    console.error("Erreur lors du fetch :", err);
+  }
+}
+
+// Lancer la récupération des posts
+getPosts();
+
