@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List - TP JavaScript</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      width: 400px;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    #taskInput {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #9face6;
+      border-radius: 8px 0 0 8px;
+      outline: none;
+    }
+
+    #addBtn {
+      padding: 10px 16px;
+      border: none;
+      background: #9face6;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #addBtn:hover {
+      background: #748ed5;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f4f6fb;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    li:hover {
+      transform: scale(1.02);
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    button.action {
+      margin-left: 5px;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background 0.3s;
+    }
+
+    .delete {
+      background: #ff6b6b;
+      color: white;
+    }
+
+    .delete:hover {
+      background: #ff4c4c;
+    }
+
+    .done {
+      background: #4caf50;
+      color: white;
+    }
+
+    .done:hover {
+      background: #3e8e41;
+    }
+
+    .stats {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    #clearAll {
+      margin-top: 15px;
+      padding: 8px 14px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #clearAll:hover {
+      background: #111;
+    }
+
+    #searchInput {
+      margin-top: 15px;
+      padding: 8px;
+      width: 100%;
+      border: 2px solid #9face6;
+      border-radius: 8px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ma To-Do List</h1>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Ajouter une tâche...">
+      <button id="addBtn">Ajouter</button>
+    </div>
+    <input type="text" id="searchInput" placeholder="Rechercher une tâche...">
+    <ul id="taskList"></ul>
+    <div class="stats">
+      <span id="stats"></span>
+    </div>
+    <button id="clearAll">Tout supprimer</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

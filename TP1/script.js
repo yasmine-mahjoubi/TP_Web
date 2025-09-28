@@ -167,4 +167,3 @@ async function getPosts() {
 
 // Lancer la récupération des posts
 getPosts();
-
