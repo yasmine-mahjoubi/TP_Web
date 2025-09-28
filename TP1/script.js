@@ -72,3 +72,62 @@ const objCopy = { ...obj, y: 99 };
 console.log("Objet original :", obj);
 console.log("Copie modifiée :", objCopy);
 
+// -------------- Partie 2 ----------------
+// ------------------------------
+// Exercice 5 – Objet simple
+// ------------------------------
+const livre = {
+  titre: "Le Petit Prince",
+  auteur: "Antoine de Saint-Exupéry",
+  annee: 1943,
+  getInfo() {
+    return `${this.titre}, écrit par ${this.auteur} en ${this.annee}`;
+  }
+};
+
+console.log("Livre :", livre.getInfo());
+
+
+// ------------------------------
+// Exercice 6 – Classe ES6
+// ------------------------------
+class Etudiant {
+  constructor(nom, note) {
+    this.nom = nom;
+    this.note = note;
+  }
+
+  getMention() {
+    if (this.note >= 16) return "Très bien";
+    if (this.note >= 14) return "Bien";
+    if (this.note >= 10) return "Passable";
+    return "Échec";
+  }
+}
+
+// Instanciation de 3 étudiants
+const etu1 = new Etudiant("Yasmine", 17);
+const etu2 = new Etudiant("Karim", 13.5);
+const etu3 = new Etudiant("Rania", 9);
+
+console.log(`${etu1.nom} : ${etu1.getMention()}`);
+console.log(`${etu2.nom} : ${etu2.getMention()}`);
+console.log(`${etu3.nom} : ${etu3.getMention()}`);
+
+
+// ------------------------------
+// Exercice 7 – Tableaux avancés
+// ------------------------------
+const notes = [12, 5, 17, 9, 20];
+
+// 1. Moyenne avec reduce
+const moyenne = notes.reduce((somme, valeur) => somme + valeur, 0) / notes.length;
+console.log("Moyenne =", moyenne.toFixed(2));
+
+// 2. Tri décroissant
+const decroissant = [...notes].sort((a, b) => b - a);
+console.log("Tri décroissant =", decroissant);
+
+// 3. Filtrer les notes ≥ 10
+const reussites = notes.filter(n => n >= 10);
+console.log("Notes ≥ 10 =", reussites);
